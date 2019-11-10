@@ -3,12 +3,12 @@
 import subprocess
 import time
 
-import DATA
+import DATAMANAGER
 
 #ACTIONS
 
 def boot():
-    duration = DATA.load_waitForInternetConnection()
+    duration = DATA.loadWaitForInternetConnection()
     time.sleep(duration)
     subprocess.call(['/home/pi/Desktop/rpi0-h/serverStart.sh'])
 

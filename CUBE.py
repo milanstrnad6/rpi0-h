@@ -3,7 +3,7 @@
 import RPi.GPIO as IO
 import time
 
-import DATAMANAGER
+import DATA
 import THSENSOR
 
 #PROPERTIES
@@ -22,7 +22,7 @@ def boot():
     PUMP.setup()
     LED.setup()
 
-    duration = DATA.loadWaitForInternetConnection() + BOOTING_EXTRATIME
+    duration = DATA.load_waitForInternetConnection() + BOOTING_EXTRATIME
     #LED.bootBlinking(duration)
 
     start()
