@@ -4,42 +4,36 @@ import RPi.GPIO as IO
 import time
 
 import DATA
-
-import MEASUREMENTS
-import SCHEDULE
-
-import ULTRASOUND
-import PUMP
-import LED
+import THSENSOR
 
 #PROPERTIES
 
 BOOTING_EXTRATIME = 5 #seconds
-WAIT_FOR_NEXT_CHECK = 2 #seconds
+WAIT_FOR_NEXT_CHECK = 120 #seconds
 
 #ACTIONS
 
 def boot():
-    print("*[CUBE - BOOT]*")
+    print("*** BOOT ***")
     IO.setmode(IO.BCM)
     IO.setwarnings(0)
+
     ULTRASOUND.setup()
     PUMP.setup()
     LED.setup()
 
     duration = DATA.load_waitForInternetConnection() + BOOTING_EXTRATIME
-    LED.bootBlinking(duration)
+    #LED.bootBlinking(duration)
 
     start()
 
 #UTILITIES
 
 def start():
-    print("*[CUBE - START]*")
+    print("*[TH - START]*")
     while True:
-	print("*[CUBE - CHECK]*")
-       	MEASUREMENTS.measure()
-    	SCHEDULE.pourIfNeeded()
+	print("*[TH - CHECK]*")
+       	THSENSOR.measure()
     	time.sleep(WAIT_FOR_NEXT_CHECK)
 
 #MAIN

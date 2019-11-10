@@ -1,6 +1,6 @@
 #BOOT MODULE:SERVER
 
-import subprocess as SUB
+import subprocess
 import time
 
 import DATA
@@ -10,7 +10,7 @@ import DATA
 def boot():
     duration = DATA.load_waitForInternetConnection()
     time.sleep(duration)
-    SUB.call(['/home/pi/CUBE3/WaterCube2/serverStart.sh'])
+    subprocess.call(['/home/pi/Desktop/rpi0-h/serverStart.sh'])
 
 #MAIN
 

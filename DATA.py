@@ -4,7 +4,7 @@ import FILES
 
 #PROPERTIES:CUBE
 
-FILENAME_CUBE = '/home/pi/CUBE3/WaterCube2/DATA/cube.txt'
+FILENAME_TH = '/home/pi/Desktop/rpi0-h/DATA/th.txt'
 ROW_WAIT_FOR_INTERNET_CONNECTION = 3
 ROW_WARNING_PERCENTAGE = 6
 ROW_WARNING_DAYS_LEFT = 8
@@ -40,7 +40,7 @@ ROW_SENDING = 9
 #ACTIONS:CUBE
 
 def load_waitForInternetConnection():
-    return int(FILES.loadline(FILENAME_CUBE,ROW_WAIT_FOR_INTERNET_CONNECTION))
+    return int(FILES.loadline(FILENAME_TH,ROW_WAIT_FOR_INTERNET_CONNECTION))
 
 def load_warningPercentage():
     return float(FILES.loadline(FILENAME_CUBE,ROW_WARNING_PERCENTAGE))
