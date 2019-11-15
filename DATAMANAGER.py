@@ -22,11 +22,11 @@ def loadHumidities():
 	return FILES.load(FILENAME_HUMIDITIES)
 
 def saveTemperature(temperature):
-	valueAsString = str(temperature)
-	print(valueAsString)
+	#valueAsString = str(temperature)
+	#print(valueAsString)
 
 	data = FILES.load(FILENAME_TEMPERATURES)
-    record = type + "|" + TIMES.stringFrom(date) + "|" 
+    record = type + "|" + TIMES.stringFrom(date) + "|" + temperature 
     record = record + "\n"
 
     data.append(record)
