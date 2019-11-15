@@ -15,14 +15,14 @@ WAIT_FOR_NEXT_CHECK = 10 #120 #seconds
 
 def boot():
     print("BOOT...")
-    IO.setmode(IO.BCM)
-    IO.setwarnings(0)
+    #IO.setmode(IO.BCM)
+    #IO.setwarnings(0)
 
-    ULTRASOUND.setup()
-    PUMP.setup()
-    LED.setup()
+    #ULTRASOUND.setup()
+    #PUMP.setup()
+    #LED.setup()
 
-    duration = DATA.loadWaitForInternetConnection() + BOOTING_EXTRATIME
+    #duration = DATA.loadWaitForInternetConnection() + BOOTING_EXTRATIME
     #LED.bootBlinking(duration)
 
     start()
