@@ -34,8 +34,9 @@ def start():
     while True:
 	print("*[TH - CHECK]*")
 
-       	#temperature = obj.read_tmperature()
-        print "Temp:", SENSOR.readTemp(), "C"
+       	temperature = SENSOR.readTemp()
+        DATAMANAGER.saveTemperature(temperature)
+        
     	time.sleep(WAIT_FOR_NEXT_CHECK)
 
 #MAIN
