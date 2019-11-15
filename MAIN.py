@@ -30,14 +30,12 @@ def boot():
 #UTILITIES
 
 def start():
-    obj = HTU21D()
-
     print("*[TH - START]*")
     while True:
 	print("*[TH - CHECK]*")
 
        	#temperature = obj.read_tmperature()
-        print "Temp:", obj.read_tmperature(), "C"
+        print "Temp:", SENSOR.readTemp(), "C"
     	time.sleep(WAIT_FOR_NEXT_CHECK)
 
 #MAIN
