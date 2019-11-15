@@ -14,7 +14,7 @@ WAIT_FOR_NEXT_CHECK = 10 #120 #seconds
 #ACTIONS
 
 def boot():
-    print("*** BOOT ***")
+    print("BOOT...")
     IO.setmode(IO.BCM)
     IO.setwarnings(0)
 
