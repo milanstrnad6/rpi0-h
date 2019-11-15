@@ -4,12 +4,12 @@ import RPi.GPIO as IO
 import time
 
 import DATAMANAGER
-import THSENSOR
+import SENSOR
 
 #PROPERTIES
 
 BOOTING_EXTRATIME = 5 #seconds
-WAIT_FOR_NEXT_CHECK = 120 #seconds
+WAIT_FOR_NEXT_CHECK = 10 #120 #seconds
 
 #ACTIONS
 
@@ -30,10 +30,14 @@ def boot():
 #UTILITIES
 
 def start():
+    obj = HTU21D()
+
     print("*[TH - START]*")
     while True:
 	print("*[TH - CHECK]*")
-       	THSENSOR.measure()
+
+       	#temperature = obj.read_tmperature()
+        print "Temp:", obj.read_tmperature(), "C"
     	time.sleep(WAIT_FOR_NEXT_CHECK)
 
 #MAIN
