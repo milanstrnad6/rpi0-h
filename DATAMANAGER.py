@@ -29,6 +29,6 @@ def saveTemperature(temperature):
     data.append(record)
     FILES.save(FILENAME_TEMPERATURES,data)
 
-def reset():
-    data = 'HISTORY\n'
-    FILES.save(FILENAME,data)
+def resetTemperatures():
+    data = 'TEMPERATURES\n'
+    FILES.save(FILENAME_TEMPERATURES,data)
