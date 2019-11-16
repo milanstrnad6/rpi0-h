@@ -26,7 +26,8 @@ def saveTemperature(temperature):
 	#valueAsString = str(temperature)
 	#print(valueAsString)
     data = FILES.load(FILENAME_TEMPERATURES)
-    record = TIMES.stringFrom(TIMES.now())+"|"+temperature+"\n"
+    tempAsString = str(temperature)
+    record = TIMES.stringFrom(TIMES.now())+"|"+tempAsString+"\n"
     data.append(record)
     FILES.save(FILENAME,data)
 
