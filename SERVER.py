@@ -8,9 +8,9 @@ import DATAMANAGER
 #ACTIONS
 
 def boot():
-    duration = DATA.loadWaitForInternetConnection()
+    duration = DATAMANAGER.loadWaitForInternetConnection()
     time.sleep(duration)
-    subprocess.call(['/home/pi/Desktop/rpi0-h/serverStart.sh'])
+    subprocess.call(['/home/pi/Desktop/FINAL/rpi0-h/serverStart.sh'])
 
 #MAIN
 
