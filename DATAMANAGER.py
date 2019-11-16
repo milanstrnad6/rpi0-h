@@ -32,3 +32,5 @@ def saveTemperature(temperature):
 def resetTemperatures():
     data = 'TEMPERATURES\n'
     FILES.save(FILENAME_TEMPERATURES,data)
+
+resetTemperatures()
