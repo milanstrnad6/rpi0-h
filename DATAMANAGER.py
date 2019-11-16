@@ -16,11 +16,10 @@ FILENAME_HUMIDITIES = '/home/pi/Desktop/FINAL/rpi0-h/DATA/humidities.txt'
 def loadWaitForInternetConnection():
     return int(FILES.loadline(FILENAME_TH,ROW_WAIT_FOR_INTERNET_CONNECTION))
 
-def loadTemperatures():
-	return FILES.load(FILENAME_TEMPERATURES)
 
-def loadHumidities():
-	return FILES.load(FILENAME_HUMIDITIES)
+def resetTemperatures():
+    data = 'TEMPERATURES\n'
+    FILES.save(FILENAME_TEMPERATURES,data)
 
 def saveTemperature(temperature):
     data = FILES.load(FILENAME_TEMPERATURES)
@@ -29,8 +28,20 @@ def saveTemperature(temperature):
     data.append(record)
     FILES.save(FILENAME_TEMPERATURES,data)
 
-def resetTemperatures():
-    data = 'TEMPERATURES\n'
-    FILES.save(FILENAME_TEMPERATURES,data)
+def loadTemperatures():
+	return FILES.load(FILENAME_TEMPERATURES)
 
-resetTemperatures()
+
+def resetHumidities():
+    data = 'HUMIDITIES\n'
+    FILES.save(FILENAME_HUMIDITIES,data)
+
+def saveHumidity(humidity):
+    data = FILES.load(FILENAME_HUMIDITIES)
+    tempAsString = str(humidity)
+    record = TIMES.stringFrom(TIMES.now())+"|"+tempAsString+"\n"
+    data.append(record)
+    FILES.save(FILENAME_HUMIDITIES,data)
+
+def loadHumidities():
+	return FILES.load(FILENAME_HUMIDITIES)

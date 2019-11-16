@@ -9,7 +9,7 @@ import SENSOR
 #PROPERTIES
 
 BOOTING_EXTRATIME = 5 #seconds
-WAIT_FOR_NEXT_CHECK = 10 #120 #seconds
+WAIT_FOR_NEXT_CHECK = 300 #120 #seconds
 
 #ACTIONS
 
@@ -31,12 +31,18 @@ def boot():
 
 def start():
     print("*[TH - START]*")
+    DATAMANAGER.resetTemperatures()
+    DATAMANAGER.resetHumidities()
+
     while True:
 	print("*[TH - CHECK]*")
 
-       	temperature = SENSOR.readTemp()
+       	temperature = SENSOR.readTemperature()
         DATAMANAGER.saveTemperature(temperature)
-        
+
+        humidity = SENSOR.readHumidity()
+        DATAMANAGER.saveHumidity(humidity)
+
     	time.sleep(WAIT_FOR_NEXT_CHECK)
 
 #MAIN

@@ -91,9 +91,13 @@ class HTU21D(object):
          return -255
          
 
-def readTemp():
+def readTemperature():
    obj = HTU21D()
    return obj.read_tmperature()
+
+def readHumidity():
+   obj = HTU21D()
+   return obj.read_humidity()
 
 #if __name__ == "__main__":
 #   obj = HTU21D()
