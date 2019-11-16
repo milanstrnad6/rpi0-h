@@ -5,11 +5,11 @@ import TIMES
 
 #PROPERTIES
 
-FILENAME_TH = '/home/pi/Desktop/rpi0-h/DATA/th.txt'
+FILENAME_TH = '/home/pi/Desktop/FINAL/rpi0-h/DATA/th.txt'
 ROW_WAIT_FOR_INTERNET_CONNECTION = 3
 
-FILENAME_TEMPERATURES = '/home/pi/Desktop/rpi0-h/DATA/temperatures.txt'
-FILENAME_HUMIDITIES = '/home/pi/Desktop/rpi0-h/DATA/humidities.txt'
+FILENAME_TEMPERATURES = '/home/pi/Desktop/FINAL/rpi0-h/DATA/temperatures.txt'
+FILENAME_HUMIDITIES = '/home/pi/Desktop/FINAL/rpi0-h/DATA/humidities.txt'
 
 #ACTIONS:TH
 
